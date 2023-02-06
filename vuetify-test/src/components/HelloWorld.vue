@@ -1,29 +1,80 @@
 <template>
-  <v-app :theme="theme">
-    <v-app-bar>
-      <v-spacer></v-spacer>
+  <v-container class="bg-surface-variant">
+    <v-row no-gutters>
+      <v-col>
+        <v-sheet class="pa-2 ma-2">
+          .v-col-auto
+        </v-sheet>
+      </v-col>
+      <v-col>
+        <v-sheet class="pa-2 ma-2">
+          .v-col-auto
+        </v-sheet>
+      </v-col>
+    </v-row>
 
-      <v-btn
-        :prepend-icon="
-          theme === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night'
-        "
-        @click="onClick"
-        >Toggle Theme</v-btn
-      >
-    </v-app-bar>
+    <v-row no-gutters>
+      <v-col>
+        <v-sheet class="pa-2 ma-2">
+          .v-col-auto
+        </v-sheet>
+      </v-col>
+      <v-col>
+        <v-sheet class="pa-2 ma-2">
+          .v-col-auto
+        </v-sheet>
+      </v-col>
+      <v-col>
+        <v-sheet class="pa-2 ma-2">
+          .v-col-auto
+        </v-sheet>
+      </v-col>
+    </v-row>
 
-    <v-main>
-      <v-container>Content area</v-container>
-    </v-main>
-  </v-app>
+    <v-row no-gutters>
+      <v-col cols="1">
+        <v-sheet class="pa-2 ma-2">
+          .v-col-2
+        </v-sheet>
+      </v-col>
+      <v-col>
+        <v-sheet class="pa-2 ma-2">
+          .v-col-auto
+        </v-sheet>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
+<script lang="ts">
+  export default {
+    data: () => ({
+      overlay: false,
+      alignments: [
+        'start',
+        'center',
+        'end',
+      ],
 
-<script setup lang="ts">
-import { ref } from "vue";
+    }),
 
-const theme = ref("light");
-
-function onClick() {
-  theme.value = theme.value === "light" ? "dark" : "light";
-}
+    watch: {
+      overlay (val) {
+        val && setTimeout(() => {
+          this.overlay = false
+        }, 2000)
+      },
+    },
+  }
 </script>
+
+<style>
+.v-card--reveal {
+  align-items: center;
+  bottom: 0;
+  justify-content: center;
+  opacity: 0.9;
+  position: absolute;
+  width: 100%;
+  cursor: pointer;
+}
+</style>
