@@ -1,69 +1,41 @@
 <template>
-  <v-container class="bg-surface-variant">
-    <v-row no-gutters>
-      <v-col>
-        <v-sheet class="pa-2 ma-2">
-          .v-col-auto
-        </v-sheet>
-      </v-col>
-      <v-col>
-        <v-sheet class="pa-2 ma-2">
-          .v-col-auto
-        </v-sheet>
-      </v-col>
-    </v-row>
-
-    <v-row no-gutters>
-      <v-col>
-        <v-sheet class="pa-2 ma-2">
-          .v-col-auto
-        </v-sheet>
-      </v-col>
-      <v-col>
-        <v-sheet class="pa-2 ma-2">
-          .v-col-auto
-        </v-sheet>
-      </v-col>
-      <v-col>
-        <v-sheet class="pa-2 ma-2">
-          .v-col-auto
-        </v-sheet>
-      </v-col>
-    </v-row>
-
-    <v-row no-gutters>
-      <v-col cols="1">
-        <v-sheet class="pa-2 ma-2">
-          .v-col-2
-        </v-sheet>
-      </v-col>
-      <v-col>
-        <v-sheet class="pa-2 ma-2">
-          .v-col-auto
-        </v-sheet>
-      </v-col>
-    </v-row>
-  </v-container>
+  <v-parallax
+    src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+  >
+    <div class="d-flex flex-column fill-height justify-center align-center text-white">
+      <h1 class="text-h4 font-weight-thin mb-4">
+        Vuetify
+      </h1>
+      <h4 class="subheading">
+        Build your application today!
+      </h4>
+    </div>
+  </v-parallax>
 </template>
 <script lang="ts">
   export default {
     data: () => ({
-      overlay: false,
-      alignments: [
-        'start',
-        'center',
-        'end',
+      messages: [
+        {
+          from: 'You',
+          message: `Sure, I'll see you later.`,
+          time: '10:42am',
+          color: 'deep-purple-lighten-1',
+        },
+        {
+          from: 'John Doe',
+          message: 'Yeah, sure. Does 1:00pm work?',
+          time: '10:37am',
+          color: 'green',
+        },
+        {
+          from: 'You',
+          message: 'Did you still want to grab lunch today?',
+          time: '9:47am',
+          color: 'deep-purple-lighten-1',
+        },
       ],
-
     }),
-
-    watch: {
-      overlay (val) {
-        val && setTimeout(() => {
-          this.overlay = false
-        }, 2000)
-      },
-    },
   }
 </script>
 
